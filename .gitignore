@@ -1,0 +1,22 @@
+# Compiled binaries
+image_pipeline/stage1_serial
+image_pipeline/stage2_parallel
+image_pipeline/stage3_pipeline
+image_pipeline/stage3_serial_batch
+image_pipeline/gen_test_ppm
+*.exe
+
+# Object files
+*.o
+
+# Generated and test images (large binary files)
+*.ppm
+*.png
+
+# Batch test directories
+image_pipeline/batch/
+image_pipeline/serial_out/
+image_pipeline/pipeline_out/
+
+# VS Code
+.vscode/
