@@ -158,14 +158,25 @@ Example results:
 
 ## Viewing results
 
-After installing ImageMagick, convert any PPM to PNG:
-```bash
+ImageMagick is installed to a Windows path that MSYS2 does not see. Run conversions from **PowerShell**, not the MSYS2 terminal:
+
+```powershell
+cd C:\Users\<you>\Documents\ParallelImageProcessing\image_pipeline
+magick input.ppm input.png
 magick output.ppm output.png
+magick pipeline_out\out_0000.ppm pipeline_out\out_0000.png
 ```
 
-Or convert an entire output directory at once:
+If `magick` is still not found, close and reopen PowerShell — winget updates PATH but only new terminals pick it up.
+
+Alternatively, call it from inside the MSYS2 terminal using the full Windows path:
+```bash
+/c/Program\ Files/ImageMagick-*/magick.exe input.ppm input.png
+```
+
+To convert an entire output directory at once (MSYS2 terminal):
 ```bash
 bash convert_outputs.sh pipeline_out
 ```
 
-The PNG files can be opened with any image viewer.
+The resulting PNG files can be opened with any image viewer.
